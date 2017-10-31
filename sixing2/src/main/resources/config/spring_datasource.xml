@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:cache="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+					http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+					http://www.springframework.org/schema/context
+					http://www.springframework.org/schema/context/spring-context-3.1.xsd
+					http://www.springframework.org/schema/tx
+					http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+					http://www.springframework.org/schema/aop
+					http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+					http://www.springframework.org/schema/mvc
+					http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+					http://www.springframework.org/schema/task
+					http://www.springframework.org/schema/task/spring-task-3.1.xsd 
+					http://www.springframework.org/schema/cache 
+					http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+
+    <!--资源载入器 -->
+      <bean
+            class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--数据连接池 -->
+     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+          init-method="init" destroy-method="close">
+        <property name="url" value="${connection.url}" />
+        <property name="username" value="${connection.username}" />
+        <property name="password" value="${connection.password}" />
+        <property name="initialSize" value="${connection.initialSize}" />
+        <property name="minIdle" value="${connection.minIdle}" />
+        <property name="maxActive" value="${connection.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        <property name="filters" value="${connection.filters}" />
+        <property name="connectionProperties" value="config.decrypt=true;config.decrypt.key=${connection.publickey}" />
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager" />
+    <!-- 当在web.xml 中DispatcherServlet使用<url-pattern>/</url-pattern> 映射时，
+    能映射静态资源（当Spring Web MVC框架没有处理请求对应的控制器时（如一些静态资源），
+    转交给默认的Servlet来响应静态文件，否则报404找不到资源错误，）。-->
+    <mvc:default-servlet-handler />
+    <!-- 配置事务管理器应用的范围 -->
+
+    <!-- spring和hibernate整合 -->
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" lazy-init="true">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    ${hibernate.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    ${hibernate.show_sql}
+                </prop>
+                <prop key="hibernate.format_sql">
+                    ${hibernate.format_sql}
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                    ${hibernate.hbm2ddl.auto}
+                </prop>
+                <prop key="hibernate.jdbc.batch_size">
+                    ${hibernate.jdbc.batch_size}
+                </prop>
+                <prop key="hibernate.autoReconnect">true</prop>
+            </props>
+        </property>
+        <property name="packagesToScan">
+            <list>
+                <value>com.upd.common.basis.entity</value>
+                <value>com.upd.business.entity</value>
+                <value>com.upd.auth.entity</value>
+            </list>
+        </property>
+    </bean>
+    <!-- 定时器配置
+        task:executor/@pool-size：可以指定执行线程池的初始大小、最大大小
+        task:executor/@queue-capacity：等待执行的任务队列的容量
+        task:executor/@rejection-policy：当等待队已满时的策略，分为丢弃、由任务执行器直接运行等方式
+       -->
+    <task:scheduler id="scheduler" pool-size="10" />
+    <task:executor id="executor" keep-alive="3600" pool-size="100-200"
+                   queue-capacity="500" rejection-policy="CALLER_RUNS" />
+    <task:annotation-driven executor="executor" scheduler="scheduler" />
+</beans>

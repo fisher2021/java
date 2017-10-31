@@ -1,0 +1,88 @@
+/**
+ * Created by lihuan on 2016/12/29.
+ */
+@charset "utf-8";
+.loginBox {
+    padding-top: 0;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #a3a3a3;
+}
+.loginBox>p {
+    width: 100%;
+    height: 68px;
+    border-radius: 15px 15px 0 0;
+    line-height: 105px;
+    text-align: left;
+    text-indent: 34px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #c2272d;
+}
+.loginBox:before{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height:  20px;
+    display: block;
+    content: "";
+    background: url("../images/icon/login-header-bg.png") no-repeat 50% 50%;
+    background-size: auto 100%;
+}
+.loginBox .row:first-child{
+    margin-top: 50px;
+}
+.loginBox .row:last-child{
+    margin-top: 40px;
+}
+.loginBox .input-text {
+    width: 100%;
+}
+.loginBox .login_input {
+    padding-left: 35px;
+    border-radius: 5px;
+}
+.loginBox .login_icon {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 18px;
+}
+.loginBox>h1 {
+    position: absolute;
+    top: -100px;
+    width:inherit;
+    height: 120px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: red;
+}
+.loginBox>h1 img {
+    width: 90%;
+}
+.form {
+    padding-top: 20px;
+}
+.btn-red,.btn-red:active {
+    background-color: red;
+    color: white;
+}
+
+/*input focus样式*/
+.input-text.focus,
+textarea.focus {
+    -webkit-box-shadow: 0 0 6px #efdf70;
+    -moz-box-shadow: 0 0 6px #efdf70;
+    -ms-box-shadow: 0 0 6px #efdf70;
+    -o-box-shadow: 0 0 6px #efdf70;
+    box-shadow:0 0 6px #efdf70;
+    border-color: #efdf70;
+}
+.input-text:hover,
+textarea:hover {
+    border-color: #ffd083;
+}

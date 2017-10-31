@@ -1,0 +1,59 @@
+body,
+html{
+    margin: 0;
+    padding: 0;
+}
+.hot-content{
+    padding: .5rem .5rem;
+}
+.hot-content>h3{
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+.hot-content>.time{
+    margin-top: .5rem;
+    margin-bottom: .75rem;
+    font-size: .6rem;
+}
+.hot-img-box{
+    width: 100%;
+    margin-bottom: .8rem;
+}
+.hot-img-box>img{
+    width: 100%;
+}
+.hot-content .content-detail{
+    font-size: .7rem;
+    line-height: 1.7;
+    color: #333333;
+}
+.content-detail img{
+    width: 100%;
+}
+.c-red{
+    color: #ff0000;
+}
+.c-999{
+    color: #999;
+}
+.ml-1{
+    margin-left: .5rem;
+}
+.f-l{
+    float: left;
+}
+.f-r{
+    float: right;
+}
+.clearfix:after{
+    content:"";
+    display: block;
+    overflow: hidden;
+    clear: both;
+}
+.read img{
+    width: .6rem;
+    vertical-align: middle;
+    margin-right: .3rem;
+}

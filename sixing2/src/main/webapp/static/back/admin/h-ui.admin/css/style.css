@@ -1,0 +1,457 @@
+/**
+ * Created by lihuan on 2016/12/28.
+ */
+@charset "utf-8";
+/*自己的样式 */
+/*header样式*/
+.navbar-wrapper{
+    height: 80px;
+}
+.i-font-size-mid{
+    font-size: 17px;
+}
+.navbar,.container-fluid,
+#Hui-userbar,.nav>ul {
+    height: inherit;
+}
+.navbar {
+     background: url("../images/icon/index-header-bg.png") no-repeat 50% 50%;
+     background-size: 100% 100%;
+}
+.Hui-aside {
+    top:65px;
+}
+.Hui-article-box {
+    top: 45px;
+}
+.navbar .logo  {
+    margin-left: 100px;
+    width: 200px;
+    height: inherit;
+    line-height: 75px;
+    /*color: white;*/
+    /*font-size: 30px;*/
+    background: url("../images/icon/title.png") no-repeat 0 50%;
+    background-size: auto 35%;
+}
+.nav>ul>li,
+.nav>ul>li>a {
+    height: 65px;
+    line-height: 65px;
+    color: white;
+}
+.nav-toggle,
+a.nav-toggle {
+    padding: 16.5px 15px;
+    background-color: #5a98de;
+}
+.navbar-logo {
+    font-size: 24px;
+}
+.breadcrumb {
+    color: #666;
+}
+.breadcrumb a{
+    margin-top:3px;
+    line-height:1.6em;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/*侧边栏样式*/
+.Hui-aside {
+    top: 75px;
+    background-color: #fff;
+}
+.Hui-aside .menu_dropdown dt .Hui-iconfont {
+    color: #666;
+}
+.Hui-aside .menu_dropdown dt {
+    background-color: white;
+    line-height: 50px;
+    color: #666;
+}
+.Hui-aside .menu_dropdown dt a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    padding-left: 24px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    text-decoration: none;
+    font-size: 16px;
+    color: #666;
+}
+.Hui-aside .menu_dropdown dt:hover,
+.Hui-aside .menu_dropdown li a:hover,
+.Hui-aside .menu_dropdown dt.active,
+.Hui-aside .menu_dropdown dt.active+dd li.active a {
+    background-color: white;
+    color: red;
+}
+.Hui-aside .menu_dropdown dt:hover .Hui-iconfont,
+.Hui-aside .menu_dropdown dt.active .Hui-iconfont {
+    font-size: 16px;
+    color: red;
+}
+.Hui-aside .menu_dropdown dt:hover .title-icon,
+.Hui-aside .menu_dropdown dt.active .title-icon {
+    font-size: 20px;
+}
+.select_user {
+    margin-right: 30px;
+    width: auto;
+}
+.operation_column {
+    margin-top: 15px;
+    width: 100%;
+    height: 55px;
+}
+.btn_column {
+    margin-bottom: 20px;
+    padding: 8px 10px;
+    background-color: #f5f5f5;
+}
+.operation_column .search_icon {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    color: #dd514c;
+}
+.operation_column input[type=text] {
+    padding-left: 22px;
+}
+.select_time {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: auto;
+}
+.select-box {
+    width: 10%;
+}
+.select {
+    width: 100%;
+}
+.time {
+    margin-left: 40px;
+}
+.device_state{
+    margin-left: 30px;
+    margin-right: 15px;
+}
+.query {
+    margin-left: 50px;
+}
+.setLine {
+    padding: 10px 0;
+}
+.device_box {
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    width: auto;
+    height: auto;
+    border: 1px solid silver;
+}
+.device_box+i:hover {
+    color: red;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .form-horizontal .form-label {
+        text-align: right;
+    }
+    .layer-container {
+        padding: 30px 15px;
+    }
+}
+.layer-container .form .row {
+    margin-top: 30px;
+}
+.formControls select {
+    width: 100%;
+    height: 30px;
+    border-color: #ddd;
+}
+.form .btn {
+    padding: 4px 42px;
+    height: 35px;
+}
+.layer-container .form>div:last-child {
+    margin-top: 50px;
+}
+.layer-container .form>div.modify-row{
+    margin-top: 25px;
+}
+.form .survey-btn-line {
+    margin-top: 30px;
+}
+.form .survey-btn-line .btn {
+    padding: 4px 70px;
+    height: 40px;
+}
+.form input[type="radio"] {
+    vertical-align: sub;
+    cursor: pointer;
+}
+.flow-line select {
+    margin-left:10px;
+    width: 127px;
+    visibility: hidden;
+}
+
+/*input focus样式*/
+.input-text.focus,
+textarea.focus {
+    -webkit-box-shadow: 0 0 6px #FF928D;
+    -moz-box-shadow: 0 0 6px #FF928D;
+    -ms-box-shadow: 0 0 6px #FF928D;
+    -o-box-shadow: 0 0 6px #FF928D;
+    box-shadow:0 0 6px #FF928D;
+    border-color: #ef544f;
+}
+.input-text:hover,
+.textarea:hover {
+    border-color: #ef544f;
+}
+
+/*分页样式设置*/
+.pagers {
+    margin-top: 40px;
+    width: auto;
+    height: 50px;
+    text-align: right;
+}
+.total-page{
+    padding-top: 3px;
+}
+.laypage_curr {
+    color: white;
+}
+
+/*修改table样式*/
+.table-bg thead th {
+    /*background-color: #f9f9f9;*/
+    /*color: red;*/
+    background-color: #ffebeb;
+    color: #100602;
+}
+.table-striped tbody>tr:nth-of-type(odd)>td,
+.table-striped tbody>tr:nth-of-type(odd)>th {
+    background-color:white;
+}
+.table-striped tbody>tr:nth-of-type(even)>td,
+.table-striped tbody>tr:nth-of-type(even)>th {
+    /*background-color: #f9f9f9;*/
+}
+.table-bordered th, .table-bordered td {
+    border-left: 1px solid #e8e7e7;
+}
+.table-border th, .table-border td {
+    border-bottom: 1px solid #e8e7e7;
+}
+.btn-danger {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+.btn-danger:hover {
+    color: #fff;
+    background-color: red;
+    border-color: red;
+}
+.btn-danger-outline {
+    color: red;
+    background-color: transparent;
+    background-image: none;
+    border-color: red;
+}
+.btn-danger-outline:hover{
+    background-color: red;
+    border-color: red;
+}
+.search-box {
+    position: relative;
+    display: inline-block;
+}
+
+/*修改上传按钮*/
+.form .btn-upload {
+    padding: 2px 10px;
+    height: 28px;
+}
+.form-group {
+    width: 100%;
+}
+@media (max-width: 767px) {
+    .upload-url {
+        display: block;
+        width: 100%;
+    }
+}
+.upload-url {
+    width: 100%;
+}
+.input-file {
+    height: 100%;
+    font-size: inherit;
+}
+
+/*欢迎页*/
+.welcome {
+    /*background-color: #0a6999;*/
+    background-color: #ffffff;
+	/*background:url(../images/1920.png) no-repeat;*/
+	background-size:100% 100%;
+}
+.welcome .logoBg {
+	margin: 20px auto;
+	width:200px;
+	height:140px;
+	/*background:url(../images/10_03.png) no-repeat;*/
+	background-position:50% 40%;
+	background-size:155% 150%;
+}
+.welcome h1 {
+    position: absolute;
+    top: 18%;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 2;
+
+}
+
+/*layer*/
+body .layer-title .layui-layer-title {
+    background-color:#dd514c;
+    color: white;
+    font-size: 18px;
+}
+body .layer-title .layui-layer-setwin .layui-layer-min cite {
+    background-color: white;
+}
+body .layer-title .layui-layer-max {
+    background: url("../images/icon/big_open.png") no-repeat 0 0;
+    background-size: 100% 100%;
+}
+body .layer-title .layui-layer-setwin .layui-layer-maxmin {
+    background: url("../images/icon/small_open.png") no-repeat 0 0;
+    background-size: 100% 100%;
+}
+body .layer-title .layui-layer-setwin .layui-layer-max:hover {
+    background-position: initial;
+}
+body .layer-title .layui-layer-close {
+    background: url("../images/icon/close.png") no-repeat 0 0;
+    background-size: 100% 100%;
+}
+body .layer-title .layui-layer-setwin .layui-layer-close1:hover {
+    opacity: 1;
+}
+body .layer-title .layui-layer-btn .layui-layer-btn0 {
+    border-color: #dd514c;
+    background-color: #dd514c;
+    color: #fff;
+}
+
+
+/*树结构样式*/
+.iframe-box{
+    top: 40px;
+    left:200px;
+}
+.iframe-box iframe{
+    width: 100%;
+    height: 100%
+}
+.ztree_aside {
+    width: 200px;
+}
+.aside {
+    left: 0;
+    top: 40px;
+    bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid #e5e5e5;
+}
+.ztree {
+    padding-top: 10px;
+}
+.ztree li a.level0 span {
+    font-weight: bold;
+    color: red;
+}
+.ztree li a.level0 {
+    display: inline-block;
+    width: inherit;
+    height: 20px;
+    line-height: 20px;
+}
+.ztree li a {
+    font-weight: bold;
+}
+.ztree li a:hover {
+    text-decoration: none;
+}
+.ztree li span.button.switch {
+    width: 20px;
+    height: 26px;
+}
+.ztree li span {
+    line-height: 25px;
+}
+.ztree li a.curSelectedNode {
+    height: 22px;
+    border: none;
+    background-color: red;
+}
+.ztree li a.curSelectedNode span {
+    color: white;
+}
+.ztree li span.button.noline_open {
+    background: url("../images/icon/tree-open.png") no-repeat 50% 50%;
+}
+.ztree li span.button.noline_close {
+    background: url("../images/icon/tree-close.png") no-repeat 50% 50%;
+}
+form .ztree{
+    padding-top: 0;
+}
+
+/*表单验证错误提示位置调整*/
+label.error {
+    top: 7px;
+    right: 30px;
+}
+
+/*角色管理-权限管理弹框*/
+.child-panel{
+    display: none;
+    padding-left: 20px;
+}
+.authority-menu{
+    width: 300px;
+    text-align: left;
+    font-size: 18px;
+}
+.authority-menu p{
+    padding-left: 20px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.authority-menu-icon{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.authority-menu-icon-down{
+    background: url("../images/icon/expansion.png") 0 50% no-repeat;
+}
+.authority-menu-icon-up{
+    background: url("../images/icon/pack-up.png") 0 50% no-repeat;
+}
